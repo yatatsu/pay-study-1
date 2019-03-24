@@ -6,6 +6,9 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
+import jp.pay.android.PayjpToken
+import jp.pay.android.Task
+import jp.pay.android.model.Token
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.OkHttpClient
 import retrofit2.Call
@@ -13,6 +16,8 @@ import retrofit2.Callback
 import retrofit2.Retrofit
 
 class MainActivity : AppCompatActivity() {
+
+    val payjp: PayjpToken by lazy { PayjpToken.init("pk_test_56aafd833aca7bf7ed55eaf8") }
 
     val api: AppApi by lazy {
         Retrofit.Builder()
@@ -61,8 +66,23 @@ class MainActivity : AppCompatActivity() {
         year: String,
         cvc: String
     ) {
-        // TODO: 1. カードからトークンを作る
-        createCharge(amount, email)
+        // 1. カードからトークンを作る
+        payjp.createToken(
+            number = number,
+            expMonth = month,
+            expYear = year,
+            cvc = cvc
+        ).enqueue(object : Task.Callback<Token> {
+            override fun onError(throwable: Throwable) {
+                // 失敗したとき
+                showAlert(false, "トークン作成に失敗しました")
+            }
+
+            override fun onSuccess(data: Token) {
+                // トークン取得
+                showAlert(false, "トークン作成に成功しました ${data.id}")
+            }
+        })
     }
 
     private fun createCharge(amount: Int, email: String) {
