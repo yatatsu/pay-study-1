@@ -12,7 +12,8 @@
   "main": "lib/index.js",
   "dependencies": {
     "firebase-admin": "^7.1.1",
-    "firebase-functions": "^2.2.1"
+    "firebase-functions": "^2.2.1",
+    "payjp": "^1.3.1"
   },
   "devDependencies": {
     "prettier": "^1.16.4",
