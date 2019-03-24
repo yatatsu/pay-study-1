@@ -5,8 +5,20 @@
     "noUnusedLocals": true,
     "outDir": "lib",
     "sourceMap": true,
+    "target": "es2015",
+    /* Strict Type-Checking Options */
     "strict": true,
-    "target": "es2015"
+    "noImplicitAny": false, // allow Any
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
   },
   "compileOnSave": true,
   "include": [
