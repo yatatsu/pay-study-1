@@ -1,0 +1,14 @@
+.gradle/
+local.properties
+gradle.properties
+.idea/
+*.iml
+projectFilesBackup*
+.DS_Store
+/build/*
+captures/
+.gradletasknamecache
+.externalNativeBuild
+*.apk
+*.ap_
+*.jks

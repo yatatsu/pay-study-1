@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:padding="16dp"
+    >
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      style="@style/TextAppearance.AppCompat.Subhead"
+      android:text="金額とカード情報を入れて購入ボタンを押してください"
+      />
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/input_layout_amount"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="金額（円）"
+      >
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_edit_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:text="1000"
+        />
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/input_layout_card_number"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="カード番号"
+      >
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_edit_card_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:text="4242424242424242"
+        />
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/input_layout_card_month"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="有効期限（月）"
+      >
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_edit_card_month"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:text="12"
+        />
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/input_layout_card_year"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="有効期限（年）"
+      >
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_edit_card_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:text="2020"
+        />
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/input_layout_card_cvc"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="CVC"
+      >
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_edit_card_cvc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:text="8888"
+        />
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/input_layout_email"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="メールアドレス"
+      >
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/input_edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:text="kitagawa@binc.jp"
+        />
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      >
+      <Button
+          android:id="@+id/purchase_button"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="購入する"
+          />
+
+      <ProgressBar
+          android:id="@+id/purchase_progress"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:visibility="gone"
+          />
+
+  </FrameLayout>
+
+</LinearLayout>
