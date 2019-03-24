@@ -10,6 +10,8 @@ interface AppApi {
     @POST("charge")
     @FormUrlEncoded
     fun createCharge(
+        @Field("token")
+        token: String,
         @Field("amount")
         amount: Int,
         @Field("email")

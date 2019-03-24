@@ -80,14 +80,15 @@ class MainActivity : AppCompatActivity() {
 
             override fun onSuccess(data: Token) {
                 // トークン取得
-                showAlert(false, "トークン作成に成功しました ${data.id}")
+                createCharge(data, amount, email)
             }
         })
     }
 
-    private fun createCharge(amount: Int, email: String) {
-        // TODO: 2. トークンと購入情報（金額とEメール）をサーバに送信する
+    private fun createCharge(token: Token, amount: Int, email: String) {
+        // 2. トークンと購入情報（金額とEメール）をサーバに送信する
         api.createCharge(
+            token = token.id,
             amount = amount,
             email = email
         ).enqueue(object : Callback<Unit> {
